@@ -39,10 +39,10 @@
       <div class="text-start" v-if="comment.file">
         <i class="fa-solid fa-paperclip text-secondary" title="Attached files"></i>
         <div v-if="comment.file.is_image">
-          <ImagePreview
-              v-bind:sources="buildImagePreviewSources(comment.file.src)"
-              v-bind:toggler="true"
-              v-bind:img_src="absoluteImageUrl(comment.file.src)"
+          <img :src="comment.file.src" :alt="Image" @click="image_preview_toggler = !image_preview_toggler"/> />
+          <FsLightbox
+            :toggler="image_preview_toggler"
+            :sources="comment.file.src"
           />
         </div>
         <div v-else>
@@ -75,7 +75,7 @@
 import Swal from "sweetalert2";
 import Loading from "@/components/Loading";
 import Pagination from "@/components/Comments/Pagination";
-import ImagePreview from "@/components/ImagePreview";
+import FsLightbox from "fslightbox-vue/v3"
 import {api_endpoints, insertParameter, buildAbsoluteUrl} from "@/config";
 
 export default {
@@ -87,10 +87,11 @@ export default {
     is_reply: false,
   },
   components: {
-    Loading, Pagination, ImagePreview
+    Loading, Pagination, FsLightbox
   },
   data(){
     return {
+      image_preview_toggler: false,
       loaded: true,
       replies: [],
       replies_data: Object,
