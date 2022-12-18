@@ -1,5 +1,9 @@
 # Simple Commentator | UI Side
 
+The front end of the [Simple Commentator](https://simple-commentator.space) project.
+
+[Server Side](https://github.com/Alex-Stulen/SimpleCommentatorServer)
+
 ## Project setup
 
 Change the HOST variable in the ./src/config.js file to the server host so that requests are sent to your server.
