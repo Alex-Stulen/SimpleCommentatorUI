@@ -1,6 +1,9 @@
-# simple_commentator_ui
+# Simple Commentator | UI Side
 
 ## Project setup
+
+Change the HOST variable in the ./src/config.js file to the server host so that requests are sent to your server.
+
 ```
 npm install
 ```
