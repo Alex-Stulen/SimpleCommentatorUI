@@ -78,6 +78,7 @@ export default {
     }
   },
   mounted() {
+    document.title = 'Simple Commentator'
     this.loadComments()
   },
   methods: {
