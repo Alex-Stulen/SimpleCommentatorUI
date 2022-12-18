@@ -40,7 +40,7 @@
         <i class="fa-solid fa-paperclip text-secondary" title="Attached files"></i>
         <div v-if="comment.file.is_image">
           <ImagePreview
-              v-bind:sources="[absoluteImageUrl(comment.file.src)]"
+              v-bind:sources="buildImagePreviewSources(comment.file.src)"
               v-bind:toggler="true"
               v-bind:img_src="absoluteImageUrl(comment.file.src)"
           />
@@ -162,6 +162,11 @@ export default {
     },
     absoluteImageUrl(relative_src){
       return buildAbsoluteUrl(relative_src)
+    },
+    buildImagePreviewSources(src){
+      let sources = []
+      sources.push(this.absoluteImageUrl(src))
+      return sources
     }
   }
 }
