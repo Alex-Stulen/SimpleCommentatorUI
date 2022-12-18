@@ -1,6 +1,6 @@
 <template>
   <Editor
-    api-key="no-api-key"
+    api-key="hr2slk33fmj2wnk3g38k2t797crhxu00nn3nwmsjcgk9llor"
     :init="{
           menubar: 'edit insert view format table tools help',
           max_chars:10
