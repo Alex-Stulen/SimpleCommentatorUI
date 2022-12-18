@@ -39,10 +39,10 @@
       <div class="text-start" v-if="comment.file">
         <i class="fa-solid fa-paperclip text-secondary" title="Attached files"></i>
         <div v-if="comment.file.is_image">
-          <img :src="comment.file.src" :alt="Image" @click="image_preview_toggler = !image_preview_toggler"/> />
+          <img class="preview_image" :src="absoluteImageUrl(comment.file.src)" alt="Image" @click="image_preview_toggler = !image_preview_toggler"/>
           <FsLightbox
             :toggler="image_preview_toggler"
-            :sources="comment.file.src"
+            :sources="[absoluteImageUrl(comment.file.src)]"
           />
         </div>
         <div v-else>
@@ -208,5 +208,16 @@ export default {
 
 .m_left_40{
   margin-left: 40px;
+}
+
+.preview_image{
+  max-width: 70px;
+  border: 3px solid #0d6efd;
+  border-radius: 10px;
+  padding: 3px;
+}
+
+.preview_image:hover{
+  cursor: pointer;
 }
 </style>
