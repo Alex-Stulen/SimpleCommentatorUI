@@ -2,7 +2,17 @@
 
 The front end of the [Simple Commentator](https://simple-commentator.space) project.
 
-[Server Side](https://github.com/Alex-Stulen/SimpleCommentatorServer)
+[Server part](https://github.com/Alex-Stulen/SimpleCommentatorServer)
+
+---
+
+### Technologies:
+
+* VUE3.JS
+* HTML, CSS, JavaScript
+* Bootstrap5
+
+---
 
 ## Project setup
 
